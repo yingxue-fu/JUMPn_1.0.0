@@ -25,53 +25,38 @@ After network construction,JUMPn searches for enriched pathways at both the co-e
 ### JUMPn Installation ###
 ##########################
 
-1. JUMPn insallation requires installation of conda on the user's local machine. If conda has not been previously installed, we recommend using Anaconda or Miniconda 
-
+1. Install anaconda or miniconda. Follow either of the following instructions for download and installation:
 
     a. Anaconda: https://docs.anaconda.com/anaconda/install/ 
-    
     b. Miniconda https://docs.conda.io/en/latest/miniconda.html
     
-    
-2. Download the JUMPn source code from GitHub 
-3. Double click to unzip the downloaded file JUMPn_Shiny.zip; a new folder    named JUMPn_Shiny will be created.
-4.	Open command line terminal. For example, in MacOS:
+2. Download the JUMPn source code from GitHub: https://github.com/VanderwallDavid/JUMPn_1.0.0.
+3. Double click to unzip the downloaded file JUMPn_v_1.0.0.zip; a new folder named JUMPn_v_1.0.0 will be created.
+4. Open command line terminal. On Windows, it is recommended using the “Anaconda Prompt”. On MacOS, you could use the built-in Terminal application.
+5. Create the JUMPn Conda environment. 
 
-
-    a.	Press two buttons: command button + space button
-    
-    b.	Type terminal
-    
-    c.	Press button return
-    
-    
-5.	Create Conda environment for JUMPn. 
-
-
-    a.	Change the current directory to the JUMPn_Shiny folder: on the             terminal, type cd /path/to/JUMPn_shiny (note: you need to know the         absolute path to the JUMPn_Shiny folder)
-    
+    a.	Get the absolute path of JUMPn_v_1.0.0 folder, i.e., /path/to/JUMPn_v_1.0.0
     b.	Create and activate an empty Conda environment. On the terminal, type the following commands:
     
-              conda create -p $PWD/JUMPn -y
+              conda create -p /path/to/JUMPn_v_1.0.0/JUMPn -y
               
-              conda activate $PWD/JUMPn
-              
+              conda activate /path/to/JUMPn_v_1.0.0/JUMPn      
               
 6.	Install JUMPn dependencies. 
-
 
     a.	Install R: on the terminal, type:
     
               conda install -c conda-forge r=4.0.0 -y
               
-    b.	Install dependency packages: on the terminal, type: 
+    b.	Change the current directory to the JUMPn_v_1.0.0 folder. On the terminal, type 
+    
+              cd /path/to/JUMPn_v_1.0.0
+    
+    c.	Install dependency packages: on the terminal, type: 
     
               Rscript bootstrap.R
               
-              
-              
 7.	Launch JUMPn on web browser.
-
 
     a.	Change the current directory to the execution folder: on the terminal, type 
     
@@ -81,7 +66,7 @@ After network construction,JUMPn searches for enriched pathways at both the co-e
     
                 R -e "shiny::runApp()"
                 
-    c.	Once the above is executed, the terminal screen will show up Listening on http://127.0.0.1:XXXX (here XXXX indicates 4 random numbers). Copy and paste               http://127.0.0.1:XXXX onto the web browser, on which JUMPn welcome page will show up
+    c.	Once the above is executed, the terminal screen will show up Listening on http://127.0.0.1:XXXX (here XXXX indicates 4 random numbers). Copy and paste           http://127.0.0.1:XXXX onto the web browser, on which JUMPn welcome page will show up.
     
     
     
