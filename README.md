@@ -32,11 +32,15 @@ After network construction,JUMPn searches for enriched pathways at both the co-e
     b. Miniconda https://docs.conda.io/en/latest/miniconda.html
     
 2. Download the JUMPn source code from GitHub: https://github.com/VanderwallDavid/JUMPn_1.0.0.
+
 3. Double click to unzip the downloaded file JUMPn_v_1.0.0.zip; a new folder named JUMPn_v_1.0.0 will be created.
+
 4. Open command line terminal. On Windows, it is recommended using the “Anaconda Prompt”. On MacOS, you could use the built-in Terminal application.
+
 5. Create the JUMPn Conda environment. 
 
     a.	Get the absolute path of JUMPn_v_1.0.0 folder, i.e., /path/to/JUMPn_v_1.0.0
+    
     b.	Create and activate an empty Conda environment. On the terminal, type the following commands:
     
               conda create -p /path/to/JUMPn_v_1.0.0/JUMPn -y
