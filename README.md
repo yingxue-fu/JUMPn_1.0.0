@@ -27,7 +27,7 @@ After network construction,JUMPn searches for enriched pathways at both the co-e
 
 1. Install anaconda or miniconda. Follow either of the following instructions for download and installation:
 
-    a. Anaconda: https://docs.anaconda.com/anaconda/install/ 
+    a. Anaconda: https://docs.anaconda.com/anaconda/install 
     b. Miniconda https://docs.conda.io/en/latest/miniconda.html
     
 2. Download the JUMPn source code from GitHub: https://github.com/VanderwallDavid/JUMPn_1.0.0.
