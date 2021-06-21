@@ -118,7 +118,8 @@ server <- function(input, output,session) {
         WidgetInfoModal(session,my_message)
     })
     observeEvent(input$PPIFileInfo,{
-        my_message <- 'JUMPn provides a variety of protein interaction databases from various organisms. If these do not suffice, you can provide your own protein interaction database.'
+        #my_message <- 'JUMPn provides a variety of protein interaction databases from various organisms. If these do not suffice, you can provide your own protein interaction database.'
+        my_message <- 'The customized PPI file contains three tab-seperated columns in the format of: <Protein_A>, “connection”, and <Protein_B>; here <Protein_X> are presented by the official gene names of each protein.'
         WidgetInfoModal(session,my_message)
         #showModal(imageModal3())
     })
@@ -141,10 +142,15 @@ server <- function(input, output,session) {
         WidgetInfoModal(session,my_message)
     })
     observeEvent(input$MetaFileInfo,{
-        my_message <- 'Upload a meta file associating each sample with a specific group for large sample analysis and additional visualization.'
+        #my_message <- 'Upload a meta file associating each sample with a specific group for large sample analysis and additional visualization.'
+	my_message='A meta file specifies the sample group information. 
+	The meta file should contain at least two columns: column 1 must contain the sample names identical to the column names and order from the protein quantification matrix file; 
+	Column 2 onwards will be used for group assignment for any number of features defined by the user. 
+	The number of columns is flexible.'
         WidgetInfoModal(session,my_message)
     })
-    observeEvent(input$MetaFileInfo,{
+    #observeEvent(input$MetaFileInfo,{
+    observeEvent(input$ppi_input_file_info,{
       my_message <- 'The PPI input file must be three columns. If you already ran WGCNA, you can  use the co_exp_cluster_3columns.xlsx. Otherwise, column 1 must be group assignment for the protein, column 2 is miscellaneous infomation, and column 3 mustbe gene names as Gene Symbols'
       WidgetInfoModal(session,my_message)
     })
