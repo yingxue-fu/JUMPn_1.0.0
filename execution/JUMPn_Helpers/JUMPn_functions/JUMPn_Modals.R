@@ -93,8 +93,10 @@ messageModal <- function(type,session){
 
 imageModal <- function(output){
   modalDialog(
-    h4(strong("DISCLAIMER: For WGCNA+PPI analysis or WGCNA Only analysis, the Gene List (Gene Symbols) must be in Column 2. Expression data must be in Column 4 onward; you can use as many expression columns as desired. 
-    For analyses of more than 20 samples, we recommend providing a group meta file as described in the 'Advanced Parameters' panel. If conducting PPI analysis only, provide a three column file as described in the 'Help' page.")),
+    #h4(strong("For WGCNA+PPI analysis or WGCNA Only analysis, the Gene List (Gene Symbols) must be in Column 2. Expression data must be in Column 4 onward; you can use as many expression columns as desired. For analyses of more than 20 samples, we recommend providing a group meta file as described in the 'Advanced Parameters' panel.")),
+    h4(strong("Column 1: unique feature ID; column 2: official gene symbol that match the ontology library and PPI networks; column 3: can be blank or flexible to users; from column 4 onwards: protein abundance of individual samples (See an EXAMPLE of file format in the attached image below). 
+	The number of samples is not limited by the program but may depend on computer memory (4Gb good for sample size < 30; 16Gb for n = 200 samples). 
+	For analyses of large sample size dataset (e.g. >30 samples), we recommend providing a group meta file as described in the 'Advanced Parameters' panel.")),
     renderImage({
       list(src='www/images/WGCNAInput.png',
             contentType = 'image/png',
@@ -110,7 +112,7 @@ imageModal <- function(output){
 
 imageModal2 <- function(output){
   modalDialog(
-    h4(strong("DISCLAIMER: PPI Analysis requires a different input than is needed for WGCNA. Column 1 must have the Cluster/Group to which the gene belongs. ",
+    h4(strong("PPI Analysis requires a different input than is needed for WGCNA. Column 1 must have the Cluster/Group to which the gene belongs. ",
               "Column 2 must have the accession ID (or some other misscelaneous categorical information), and Column 3 must contain the gene list (Gene Symbols),",
               'If you are conducting independent PPI analysis after running WGCNA, then this 3-column file is produced automatically, which you  can',
               'use directly as input for independent PPI after downloading the WGCNA data. Otherwise, you can make your own custom file which adheres to the described format.',
@@ -127,7 +129,7 @@ imageModal2 <- function(output){
 }
 imageModal3 <- function(output){
   modalDialog(
-    h4(strong("DISCLAIMER: A user-definede PPI database must be a .sif file with a format as in the image below. Column 1 contains interaction component A
+    h4(strong("A user-definede PPI database must be a .sif file with a format as in the image below. Column 1 contains interaction component A
               Column 2 contains any misscelaneous information, and Column 3 contains interaction component B.")),
     renderImage({
       list(src='www/images/example_ppi_input.png',
@@ -141,7 +143,7 @@ imageModal3 <- function(output){
 }
 imageModal4 <- function(output){
   modalDialog(
-    h4(strong("DISCLAIMER: A user-definede pathway annotation database must have the following format. Column 1 contains the pathway name or description,
+    h4(strong("A user-definede pathway annotation database must have the following format. Column 1 contains the pathway name or description,
               Column 2 contains the genes in the pathway separated by '/'")),
     renderImage({
       list(src='www/images/example_pathway_enrichment.png',
@@ -155,7 +157,7 @@ imageModal4 <- function(output){
 }
 imageModal5 <- function(output){
   modalDialog(
-    h4(strong("DISCLAIMER: A user-definede background file must be a .txt file with simply a list of genes. It should have a format as appears in the image below.")),
+    h4(strong("A user-definede background file must be a .txt file with simply a list of genes. It should have a format as appears in the image below.")),
     renderImage({
       list(src='www/images/example_background.png',
            contentType = 'image/png',
@@ -169,7 +171,7 @@ imageModal5 <- function(output){
 
 imageModal6 <- function(output){
   modalDialog(
-    h4(strong("DISCLAIMER: A meta-group file must have the identical sample names from the input expression matrix in Column 1. Column 2 onwards can be any group identifying information for each sample.")),
+    h4(strong("A meta-group file must have the identical sample names from the input expression matrix in Column 1. Column 2 onwards can be any group identifying information for each sample.")),
     renderImage({
       list(src='www/images/example_meta_file.png',
            contentType = 'image/png',
@@ -211,7 +213,7 @@ NewPPISelected <- function(session){
     title='Warning!', 
     type='warning',
     btn_labels = NA,
-    text = tags$div("DISCLAIMER: PPI Analysis requires a different input than is needed for WGCNA. Column 1 must have the Cluster/Group to which the gene belongs. ",
+    text = tags$div("PPI Analysis requires a different input than is needed for WGCNA. Column 1 must have the Cluster/Group to which the gene belongs. ",
               "Column 2 must have the accession ID (or some other misscelaneous categorical information), and Column 3 must contain the gene list (Gene Symbols),",
               'If you are conducting independent PPI analysis after running WGCNA, then this 3-column file is produced automatically (co_exp_clusters_3columns.xlsx), which you  can',
               'use directly as input for independent PPI after downloading the WGCNA data. Otherwise, you can make your own custom file which adheres to the described format.',

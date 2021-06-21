@@ -17,7 +17,8 @@ options(shiny.maxRequestSize = 30*1024^2)
 R_BUILD_TAR=tar
 # Define UI for application that draws a histogram
 ui <- fluidPage(
-    titlePanel("JUMPn: Comprehensive Proteomic Network Analysis"),
+    #titlePanel("JUMPn: Comprehensive Proteomic Network Analysis"),
+    titlePanel("JUMPn: network analysis for quantitative proteomics"),
     theme = "style/style.css",
     fluid = TRUE,
     collapsible=TRUE,
