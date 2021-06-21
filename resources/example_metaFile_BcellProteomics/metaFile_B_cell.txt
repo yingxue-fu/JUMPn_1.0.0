@@ -1,0 +1,9 @@
+samples	timePoints
+Pr0B_0h1	g1_0h
+ProB_0h2	g1_0h
+Pr0B_1h1	g2_1h
+Pr0B_1h2	g2_1h
+Pr0B_4h1	g3_4h
+Pr0B_4h2	g3_4h
+Pr0B_16h1	g4_16h
+Pr0B_16h2	g4_16h
