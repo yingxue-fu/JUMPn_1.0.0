@@ -22,13 +22,11 @@ BiocManager::install("msigdbr", dependencies=TRUE)             ####
 #######################################################################
 ###### Install CRAN-dependent packages via vector simultaneously ######
 #######################################################################
-pkgs <- c('shiny','gplots', 'ggplot2','DT','tidyverse',                    ######
-          'plyr','readr','writexl','readxl',                     ######
-          'rvest','httr','igraph','visNetwork',                  ######
-          'stringr','shinyjs','ggnewscale','org.Mm.eg.db',               ######
+pkgs <- c('shiny','gplots', 'ggplot2','DT','tidyverse','Rcpp',                        ######
+          'plyr','readr','writexl','readxl',                                          ######
+          'rvest','httr','igraph','visNetwork',                                       ######
+          'stringr','shinyjs','ggnewscale','org.Mm.eg.db',                            ######
           'enrichplot', 'shinyBS','shinydashboard','shinyWidgets')                    ######
-install.packages(pkgs, repos="http://cran.us.r-project.org", dependencies=TRUE)     ######
+install.packages(pkgs, repos="http://cran.us.r-project.org", dependencies=TRUE)       ######
 #######################################################################
 #######################################################################
-
-print('The JUMPn depeendencies have been successfully installed. You can now run the JUMPn app.')
