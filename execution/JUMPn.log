@@ -1,0 +1,36 @@
+JUMPn Version 1.0.0
+        Input File: Salmonella_JUMPn_input_all.xlsx 
+        Log2 Transformation: 2
+        Output Folder: example_output_folder 
+        Min Cluster Size: 10 
+        Min Pearson Correlation: 0.700000 
+        Min Distance: 0.100000 
+        Min Module Size: 100 
+        PPI Database: BioPlex3_InWeb2016_STRINGv11_human_v1.0.sif
+JUMPn Version 1.0.0
+        Input File: 54477 
+        Log2 Transformation: 2
+        Output Folder: example_output_folder 
+        Min Cluster Size: 10 
+        Min Pearson Correlation: 0.700000 
+        Min Distance: 0.100000 
+        Min Module Size: 100 
+        PPI Database: BioPlex3_InWeb2016_STRINGv11_human_v1.0.sif
+JUMPn Version 1.0.0
+        Input File: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 
+        Log2 Transformation: 2
+        Output Folder: example_output_folder 
+        Min Cluster Size: 10 
+        Min Pearson Correlation: 0.700000 
+        Min Distance: 0.100000 
+        Min Module Size: 100 
+        PPI Database: BioPlex3_InWeb2016_STRINGv11_human_v1.0.sif
+JUMPn Version 1.0.0
+        Input File: /var/folders/2v/2mn5tzf56t13nh4wkjwd2kpwbc_kmq/T//Rtmp0Udwfg/9293599073d2a2caaf2cb671/0.xlsx 
+        Log2 Transformation: 2
+        Output Folder: example_output_folder 
+        Min Cluster Size: 10 
+        Min Pearson Correlation: 0.700000 
+        Min Distance: 0.100000 
+        Min Module Size: 100 
+        PPI Database: BioPlex3_InWeb2016_STRINGv11_human_v1.0.sif
