@@ -155,7 +155,7 @@ execute_wgcna <- function(input_exp_matrix,network_type,outputDir,col_offset,min
   png(file=paste(outputDir,'/boxplot_raw.png',sep=''),width=500,height=500)
   box_col=ceiling(sqrt(length(tmp)))
   box_row=ceiling(length(tmp)/box_col)
-  par(las=2,mfrow=c(box_row,box_col),mar = c(1, 1, 1, 1),cex.lab=1.2)
+  par(las=2,mfrow=c(box_row,box_col),mar = c(10, 4, 1, 1),cex.lab=1.2)
   for (i in 1:length(tmp))
   {
     group=names(m.colors)[i]
@@ -163,7 +163,7 @@ execute_wgcna <- function(input_exp_matrix,network_type,outputDir,col_offset,min
     if (group=="lightcyan") useCol="cadetblue1"
     if (group=="white") useCol="cadetblue1"
     if (group=="lightyellow") useCol="cadetblue1"
-    boxplot(nm[dynamicColors==group,],outline=FALSE, border=useCol, names=names(nm),ylab="log2(Norm. TMT intensity)", main=paste("Cluster",i,'(','n=',length(tb[dynamicColors==group,1]),')',sep=''))
+    boxplot(nm[dynamicColors==group,],outline=FALSE, border=useCol, names=colnames(nm[dynamicColors==group,]), ylab="Relative Abundance", main=paste("Cluster",i,'(','n=',length(tb[dynamicColors==group,1]),')',sep=''))
   }
   dev.off()
   
@@ -328,7 +328,7 @@ execute_wgcna <- function(input_exp_matrix,network_type,outputDir,col_offset,min
   png(file=paste(outputDir,'/boxplot_coexpression_cluster.png',sep=''),width=500,height=500)
   box_col=ceiling(sqrt(length(tmp)))
   box_row=ceiling(length(tmp)/box_col)
-  par(las=2,mfrow=c(box_row,box_col),mar = c(1, 1, 1, 1),cex.lab=1.2)
+  par(las=2,mfrow=c(box_row,box_col),mar = c(10, 4, 1, 1),cex.lab=1.2)
   for (i in 1:length(tmp))
   {
     group=names(m.colors)[i]
@@ -336,7 +336,7 @@ execute_wgcna <- function(input_exp_matrix,network_type,outputDir,col_offset,min
     if (group=="lightcyan") useCol="cadetblue1"
     if (group=="white") useCol="cadetblue1"
     if (group=="lightyellow") useCol="cadetblue1"
-    boxplot(nm[mergedColors==group,],outline=FALSE,border =useCol, names=names(nm),ylab="log2(Norm. TMT intensity)", main=paste("Cluster",i,'(','n=',length(tb[mergedColors==group,1]),')',sep=''))
+    boxplot(nm[mergedColors==group,],outline=FALSE,border =useCol, names=colnames(nm[mergedColors==group,]),ylab="Relative Abundance", main=paste("Cluster",i,'(','n=',length(tb[mergedColors==group,1]),')',sep=''))
   }
   dev.off()
   
@@ -349,16 +349,16 @@ execute_wgcna <- function(input_exp_matrix,network_type,outputDir,col_offset,min
     
     # small size
     png(file=paste(outputDir,'/small_boxplot_coexpression_cluster_',i,'.png',sep=''),width=500,height=500)
-    par(las=2,mfrow=c(1,1),mar = c(1, 1, 1, 1))
+    par(las=2,mfrow=c(1,1),mar = c(10, 4, 1, 1))
     
-    boxplot(nm[mergedColors==group,],outline=FALSE,border =useCol, names=names(nm),ylab="log2(Norm. TMT intensity)", main=paste("Cluster",i,'(','n=',length(tb[mergedColors==group,1]),')',sep=''))
+    boxplot(nm[mergedColors==group,],outline=FALSE,border =useCol, names=colnames(nm[mergedColors==group,]),ylab="Relative Abundance", main=paste("Cluster",i,'(','n=',length(tb[mergedColors==group,1]),')',sep=''))
     dev.off()
     
     # large size
     png(file=paste(outputDir,'/large_boxplot_coexpression_cluster_',i,'_',group,'.png',sep=''),width=1000,height=1000)
-    par(las=2,mfrow=c(1,1),mar = c(1, 1, 1, 1))
+    par(las=2,mfrow=c(1,1),mar = c(10, 4, 1, 1)) 
     
-    boxplot(nm[mergedColors==group,],outline=FALSE,border =useCol, names=names(nm),ylab="log2(Norm. TMT intensity)", main=paste("Cluster",i,'(','n=',length(tb[mergedColors==group,1]),')',sep=''))
+    boxplot(nm[mergedColors==group,],outline=FALSE,border =useCol, names=colnames(nm[mergedColors==group,]),ylab="Relative Abundance", main=paste("Cluster",i,'(','n=',length(tb[mergedColors==group,1]),')',sep=''))
     dev.off()
   }
   
@@ -415,7 +415,7 @@ execute_wgcna <- function(input_exp_matrix,network_type,outputDir,col_offset,min
   png(file=paste(outputDir,'/trends_coexpression_cluster.png',sep=''),width=500,height=500)
   box_col=ceiling(sqrt(length(tmp)))
   box_row=ceiling(length(tmp)/box_col)
-  par(las=2,mfrow=c(box_row,box_col),mar = c(2, 2, 2, 2),cex.lab=.8)
+  par(las=2,mfrow=c(box_row,box_col),mar = c(10, 4, 2, 2),cex.lab=.8)
   # for each cluster:
   for (i in 1:length(tmp))
   {
@@ -441,7 +441,7 @@ execute_wgcna <- function(input_exp_matrix,network_type,outputDir,col_offset,min
       colcn <- colcn[1]
     }
     specific_MEn <- MEn[!is.na(MEn[,colcn]),colcn]
-    plot(MEn[,colcn],type='l',ylab='Relative level',xlab='',ylim=c(min(specific_MEn)-0.5,max(specific_MEn)+0.5),main=paste("Cluster",i,' (n=',length(tb[mergedColors==group,1]),')',sep=''))
+    plot(MEn[,colcn],type='l',ylab='Relative Abundance',xlab='Samples',ylim=c(min(specific_MEn)-0.5,max(specific_MEn)+0.5),main=paste("Cluster",i,' (n=',length(tb[mergedColors==group,1]),')',sep=''))
     #lines(skipRange,MEn[skipRange,colcn],col='white')
     
     # for each protein, 
@@ -463,7 +463,7 @@ execute_wgcna <- function(input_exp_matrix,network_type,outputDir,col_offset,min
   for (i in 1:length(tmp))
   {
     png(file=paste(outputDir,'/trend_coexpression_cluster_',i,'.png',sep=''),width=500,height=500)
-    par(mar = c(5, 2, .75, 1),cex.lab=1.2)
+    par(mar = c(10, 1, .75, 1),cex.lab=1.2)
     group=names(m.colors)[i]
     m=tbn[mergedColors==group,]
 
@@ -481,7 +481,7 @@ execute_wgcna <- function(input_exp_matrix,network_type,outputDir,col_offset,min
       colcn <- colcn[1]
     }
     specific_MEn <- MEn[!is.na(MEn[,colcn]),colcn]
-    plot(MEn[,colcn],type='l',ylab='Relative level',xlab='',ylim=c(min(specific_MEn)-0.5,max(specific_MEn)+0.5),main=paste("Cluster",i,' (n=',length(tb[mergedColors==group,1]),')',sep=''))
+    plot(MEn[,colcn],type='l',ylab='Relative Abundance',xlab='Samples',ylim=c(min(specific_MEn)-0.5,max(specific_MEn)+0.5),main=paste("Cluster",i,' (n=',length(tb[mergedColors==group,1]),')',sep=''))
     #lines(skipRange,MEn[skipRange,colcn],col='white')
     
     # for each protein, 
