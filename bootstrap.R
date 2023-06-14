@@ -14,7 +14,7 @@ BiocManager::install("ReactomePA", dependencies=TRUE)          ####
 BiocManager::install("org.Hs.eg.db", dependencies=TRUE)        ####
 BiocManager::install("AnnotationDbi", dependencies=TRUE)       ####
 BiocManager::install("annotate", dependencies=TRUE)            ####
-BiocManager::install("WGCNA", dependencies=TRUE)               ####
+#BiocManager::install("WGCNA", dependencies=TRUE)               ####
 BiocManager::install("msigdbr", dependencies=TRUE)             ####
 ################################################
 ################################################
@@ -22,7 +22,7 @@ BiocManager::install("msigdbr", dependencies=TRUE)             ####
 #######################################################################
 ###### Install CRAN-dependent packages via vector simultaneously ######
 #######################################################################
-pkgs <- c('shiny','gplots', 'ggplot2','DT','tidyverse','Rcpp',                        ######
+pkgs <- c('WGCNA','shiny','gplots', 'ggplot2','DT','tidyverse','Rcpp',                        ######
           'plyr','readr','writexl','readxl',                                          ######
           'rvest','httr','igraph','visNetwork',                                       ######
           'stringr','shinyjs','ggnewscale','org.Mm.eg.db',                            ######
